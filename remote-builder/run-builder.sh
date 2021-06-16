@@ -38,7 +38,8 @@ EOF
 
 ${GCLOUD} compute instances create \
        ${INSTANCE_ARGS} ${INSTANCE_NAME} \
-       ${NETWORK} ${SUBNETWORK} \
+       --network=${NETWORK} \
+       --subnetwork=${SUBNETWORK} \
        --metadata block-project-ssh-keys=TRUE \
        --metadata-from-file ssh-keys=ssh-keys
 
